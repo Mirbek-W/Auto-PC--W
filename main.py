@@ -36,17 +36,17 @@ def start_menu():
 
     clik_lab=Button(text="number of clicks",fg=zadni,bg=text_color)
     clik_lab.place(x=10,y=20)
-    clik_ent= Entry(root, width=5, font=15)
-    clik_ent.place(x=110,y=20)
+    clik_ent= Entry(root,  font=15, bg='#222431',borderwidth=0, foreground="white")
+    clik_ent.place(x=109,y=20,width=55,height=25)
 
     clik_dli=Button(text="Mile/sec duration",fg=zadni,bg=text_color)
-    clik_dli.place(x=170,y=20)
-    clik_ent2= Entry(root, width=5, font=15)
-    clik_ent2.place(x=309,y=20)
+    clik_dli.place(x=205,y=20)
+    clik_ent2= Entry(root,font=15,   bg='#222431',borderwidth=0, foreground="white")
+    clik_ent2.place(x=309,y=20,width=55, height=26)
 
 
     but1= Button (root,background=b_color ,text= "Add")
-    but1.place(x=365, y=20)
+    but1.place(x=395, y=20)
 
     iop1=Label(text="88888888",fg=zadni,bg=text_color)
     iop1.place(x=475, y=20)
