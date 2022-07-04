@@ -48,7 +48,7 @@ def start_menu():
     but1= Button (root,background=b_color ,text= "Add")
     but1.place(x=365, y=20)
 
-    iop1=Label(text="  88888888",fg=zadni,bg=text_color)
+    iop1=Label(text="88888888",fg=zadni,bg=text_color)
     iop1.place(x=475, y=20)
 
 
