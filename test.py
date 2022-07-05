@@ -1,30 +1,21 @@
-from tkinter import Tk, Canvas, Frame, BOTH
+from tkinter import*
+from tkinter import ttk
  
  
-class Example(Frame):
- 
-    def __init__(self):
-        super().__init__()
-        self.initUI()
- 
-    def initUI(self):
-        self.master.title("Рисуем линии")
-        self.pack(fill=BOTH, expand=1)
- 
-        canvas = Canvas(self)
-        canvas.create_line(15, 25, 200, 25)
-        canvas.create_line(300, 35, 300, 200, dash=(4, 2))
-        canvas.create_line(55, 85, 155, 85, 105, 180, 55, 85)
- 
-        canvas.pack(fill=BOTH, expand=1)
+def xFunc1(event):
+ print (f"Координаты щелчка левой кнопкой мыши: x = {event.x} y = {event.y}")
  
  
-def main():
-    root = Tk()
-    ex = Example()
-    root.geometry("400x250+300+300")
-    root.mainloop()
+ win=Tk()
+ win.title ("Kahn Software v1") # # Название окна
+ win.geometry ("600x500 + 200 + 20") # # За окном 500 следует буква x
+
+ button1 =Button(win, text="leftmouse button")
+ # button1 = tkinter.Label (win, text = "leftmouse button") # # Любое небольшое пространство может быть связано с событиями мыши
+ button1.bind ("<Button-1>", xFunc1) # # Привязка событий левого щелчка к элементам управления кнопки
+ button1.pack()
  
- 
-if __name__ == '__main__':
-    main()
+ win.mainloop () # # Сохранение окон
+
+
+xFunc1()
