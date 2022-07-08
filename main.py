@@ -4,6 +4,7 @@ from tkinter import *
 import time
 import pyautogui
 from threading import *
+from PIL import ImageTk 
 
 
 from tkinter import Tk, Canvas, Frame, BOTH
@@ -15,15 +16,20 @@ b_color = "#48E66A"
 
 def xy ():
 
+
+
+    
+
     try:
       while True:
 
         # получение текущих координат
         x, y = pyautogui.position()
         # метод str(x) превращает число в строку а rjust(4) сдвигает его на четыре позиции вправо
-        global positionStr
+         
         positionStr = 'X:' + str(x).rjust(4) + '  Y:' + str(y).rjust(4)
         # end предотвращает добавление символа новой строки,  без  этого старые координаты удалить не получится
+        
         prinx=print(positionStr,end='')
         
 
@@ -73,6 +79,12 @@ def start_menu():
     root.title("Auto PC -W")
     root.iconbitmap(r'img/logo.ico')
     root['background'] = bacr1
+
+    #кнопка настройки 
+    image = ImageTk.PhotoImage(file="img/set.png")
+    set=Button(root, image=image, bg=bacr1 ,border=0)
+    set.place(x=670,y=20)
+
 
     # нажатие фронт
     clik_lab = Button(text="number of clicks", fg=zadni, bg=text_color)
@@ -172,6 +184,40 @@ def start_menu():
 
     prinb = Button(root, background=b_color, text="Add")
     prinb.place(x=395, y=140)
+
+    #scroll
+    scroll_lab = Button(text="scroll", fg=zadni, bg=text_color)
+    scroll_lab.place(x=10, y=170)
+    scroll_ent = Entry(root,  font=15, bg='#222431',
+                     borderwidth=0, foreground="white")
+    scroll_ent.place(x=50, y=170, width=55, height=25)
+
+    scrollb = Button(root, background=b_color, text="Add")
+    scrollb.place(x=136, y=170)
+
+    #scroll click
+    scrollk_lab = Button(text="scroll", fg=zadni, bg=text_color)
+    scrollk_lab.place(x=205, y=170)
+    scrollk_ent = Entry(root,  font=15, bg='#222431',
+                     borderwidth=0, foreground="white")
+    scrollk_ent.place(x=245, y=170, width=55, height=25)
+
+    scrollbk = Button(root, background=b_color, text="Add")
+    scrollbk.place(x=336, y=170)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     xy1=Thread(target=xy)
     xy1.start()
     xy3=Thread(target=root2)

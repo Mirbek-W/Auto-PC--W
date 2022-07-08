@@ -1,21 +1,25 @@
-from tkinter import*
-from tkinter import ttk
- 
- 
-def xFunc1(event):
- print (f"Координаты щелчка левой кнопкой мыши: x = {event.x} y = {event.y}")
- 
- 
- win=Tk()
- win.title ("Kahn Software v1") # # Название окна
- win.geometry ("600x500 + 200 + 20") # # За окном 500 следует буква x
-
- button1 =Button(win, text="leftmouse button")
- # button1 = tkinter.Label (win, text = "leftmouse button") # # Любое небольшое пространство может быть связано с событиями мыши
- button1.bind ("<Button-1>", xFunc1) # # Привязка событий левого щелчка к элементам управления кнопки
- button1.pack()
- 
- win.mainloop () # # Сохранение окон
+import tkinter as Tk
 
 
-xFunc1()
+from tkinter import *
+
+
+class App(object):
+    def new_row(self):
+        # Create widgets
+        new_entry = Label( root,text="рома",  width=7)
+
+        # Put widgets in grid
+        self.num_rows += 20
+        new_entry.place(x=10,y=self.num_rows)
+
+    def __init__(self):
+        self.num_rows = 1
+        iop="строка"
+        createRow_button = Button(
+            root, text=iop, command=self.new_row)
+        createRow_button.grid()
+
+root = Tk()
+app = App()
+root.mainloop()
