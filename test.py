@@ -7,7 +7,13 @@ from tkinter import *
 class App(object):
     def new_row(self):
         # Create widgets
-        new_entry = Label( root,text="рома",  width=7)
+
+        message = StringVar()
+        message_entry = Entry(textvariable=message)
+        message_entry.pack(side=TOP)
+        new_entry = Label( root,text=" h",  width=7)
+        new_entry.config(text=message.get())
+
 
         # Put widgets in grid
         self.num_rows += 20
@@ -15,10 +21,21 @@ class App(object):
 
     def __init__(self):
         self.num_rows = 1
-        iop="строка"
+        
+        iop3="строка"
         createRow_button = Button(
-            root, text=iop, command=self.new_row)
-        createRow_button.grid()
+            root, text="jljlj", command=self.new_row(iop3))
+        createRow_button.place(x=20,y=100)
+    def __init__(self):
+        self.num_rows = 1
+
+
+        
+        iop="oop"
+
+        createRow_button = Button(
+            root, text="lfsdjkl", command=self.new_row)
+        createRow_button.pack()
 
 root = Tk()
 app = App()

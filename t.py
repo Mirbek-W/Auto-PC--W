@@ -7,7 +7,7 @@ window.geometry('800x600')
 window['bg'] = 'white'
 
 def click():
-   c = Canvas(width='100', height='100', bg='blue', bd='0')
+   c = Canvas(width='800', height='600', bg='blue', bd='0')
    c.pack()
 
    btn1 = Button(text='В Меню', command=c.destroy)            # <---- command=c.destroy
